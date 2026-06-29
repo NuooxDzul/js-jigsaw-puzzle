@@ -7,8 +7,6 @@ const showOriginalButton = document.getElementById('show-original');
 const timerDisplay = document.querySelector('.timer');
 const successMessage = document.querySelector('.success-message');
 const completionTimeDisplay = document.getElementById('completion-time');
-const addNewImage = document.getElementById('add-new');
-const inputNewImage = document.getElementById('input-image');
 
 // Game variables
 let puzzlePieces = [];
@@ -278,24 +276,9 @@ function toggleOriginalImage() {
     }
 }
 
-function selectImage(){
-    inputNewImage.click();
-}
-
-//add new image from local
-function uploadImage() {
-    const file = inputNewImage.files[0]
-    if (file){
-        const imageURL = URL.createObjectURL(file);
-        images.push(imageURL);
-    }
-}
 // Event listeners
 startButton.addEventListener('click', initGame);
 showOriginalButton.addEventListener('click', toggleOriginalImage);
-addNewImage.addEventListener('click', selectImage)
-inputNewImage.addEventListener('change', uploadImage); 
-
 
 // Make the container responsive
 window.addEventListener('resize', () => {
